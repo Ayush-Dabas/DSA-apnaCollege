@@ -28,9 +28,9 @@ void printList(node *head)
 
 int main()
 {
-    node *Head = new node(1);
+    node *head = new node(1);
     node *a = new node(2);
-    Head->next = a;
+    head->next = a;
     node *b = new node(3);
     a->next = b;
     node *c = new node(4);
