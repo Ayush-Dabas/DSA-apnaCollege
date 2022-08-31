@@ -21,22 +21,37 @@ void printList(node *head)
     node *temp = head;
     while (temp)
     {
-        cout << head->val << "->";
+        cout << temp->val << "->";
         temp = temp->next;
     }
     cout << "NULL\n";
 }
 
+node *reverseList(node *head)
+{
+    if (head == NULL || head->next == NULL)
+    {
+        return head;
+    }
+    node *temp = reverseList(head->next);
+    head->next->next = head;
+    head->next = NULL; 
+    return temp;   
+}
+
 int main()
 {
-    node *Head = new node(1);
+    node *head = new node(1);
     node *a = new node(2);
-    Head->next = a;
+    head->next = a;
     node *b = new node(3);
     a->next = b;
     node *c = new node(4);
     b->next = c;
     node *d = new node(5);
     c->next = d;
+    printList(head);
+    head = reverseList(head);
+    printList(head);
     return 0;
 }
