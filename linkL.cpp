@@ -20,7 +20,7 @@ void printList(node *head)
     node *temp = head;
     while (temp)
     {
-        cout << head->val << "->";
+        cout << temp->val << "->";
         temp = temp->next;
     }
     cout << "NULL\n";
