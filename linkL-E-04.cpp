@@ -1,3 +1,4 @@
+// delete without head node
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -14,6 +15,10 @@ public:
         next = NULL;
     }
 };
+
+void deleteNode(node* ptr){
+    *ptr = *(ptr->next);
+}
 
 void printList(node *head)
 {
@@ -37,5 +42,7 @@ int main()
     b->next = c;
     node *d = new node(5);
     c->next = d;
+    deleteNode(b);
+    printList(head);
     return 0;
 }
